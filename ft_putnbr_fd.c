@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asadik <asadik@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/30 16:33:19 by asadik            #+#    #+#             */
-/*   Updated: 2022/10/31 17:22:08 by asadik           ###   ########.fr       */
+/*   Created: 2022/10/11 11:41:32 by asadik            #+#    #+#             */
+/*   Updated: 2022/10/31 13:37:43 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *param_name, ...)
+void	ft_putnbr_fd(int n, int fd)
 {
-	va_list	ap;
+	long	nb;
 
-	va_start(ap , param_name[i]);
-	while (param_name[i]!= '%' and param_name[i])
+	nb = ((long)n);
+	if (nb < 0)
 	{
-		if (l3iba[i] == '%')
-		{
-			if (l3iba[i + 1] == '%')
-				ft_putchar_fd ("%", FD);
-			if (l3iba[i + 1] == 'd' || l3iba[i + 1] == 'i')
-				ft_putnbr_fd(l3iba[i], FD);
-		}
-		else
-		{
-			ft_putchar_fd(param_name[i], FD);
-		}
-		i++;
+		ft_putchar_fd('-', fd);
+		nb = -nb;
 	}
-	
-	va_end(ap);
+	if (nb > 9)
+	{
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putnbr_fd(nb % 10, fd);
+	}
+	if (nb >= 0 && nb <= 9)
+		ft_putchar_fd(nb + '0', fd);
 }

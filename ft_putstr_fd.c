@@ -1,37 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asadik <asadik@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/30 16:33:19 by asadik            #+#    #+#             */
-/*   Updated: 2022/10/31 17:22:08 by asadik           ###   ########.fr       */
+/*   Created: 2022/10/11 11:28:25 by asadik            #+#    #+#             */
+/*   Updated: 2022/10/31 13:37:48 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *param_name, ...)
+void	ft_putstr_fd(char *s, int fd)
 {
-	va_list	ap;
-
-	va_start(ap , param_name[i]);
-	while (param_name[i]!= '%' and param_name[i])
-	{
-		if (l3iba[i] == '%')
-		{
-			if (l3iba[i + 1] == '%')
-				ft_putchar_fd ("%", FD);
-			if (l3iba[i + 1] == 'd' || l3iba[i + 1] == 'i')
-				ft_putnbr_fd(l3iba[i], FD);
-		}
-		else
-		{
-			ft_putchar_fd(param_name[i], FD);
-		}
-		i++;
-	}
-	
-	va_end(ap);
+	if (s == 0)
+		return ;
+	while (*s)
+		write (fd, s++, 1);
 }
