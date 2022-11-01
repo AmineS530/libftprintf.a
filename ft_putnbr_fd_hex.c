@@ -6,7 +6,7 @@
 /*   By: asadik <asadik@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 13:15:42 by asadik            #+#    #+#             */
-/*   Updated: 2022/11/01 13:30:55 by asadik           ###   ########.fr       */
+/*   Updated: 2022/11/01 13:52:24 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,5 @@ void	ft_putnbr_fd_hex(int n, char x, int fd)
 	{
 		ft_putnbr_fd_hex((n / base), x , FD);
 		ft_putnbr_fd_hex((n % base), x , FD);
-
 	}
 }

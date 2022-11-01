@@ -6,14 +6,13 @@
 /*   By: asadik <asadik@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 16:33:19 by asadik            #+#    #+#             */
-/*   Updated: 2022/11/01 13:46:19 by asadik           ###   ########.fr       */
+/*   Updated: 2022/11/01 15:11:37 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 static void	coversions();
-
 
 int	ft_printf(const char *param_name, ...)
 {
