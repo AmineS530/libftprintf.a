@@ -6,7 +6,7 @@
 /*   By: asadik <asadik@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 16:33:19 by asadik            #+#    #+#             */
-/*   Updated: 2022/11/03 18:57:09 by asadik           ###   ########.fr       */
+/*   Updated: 2022/11/03 19:17:15 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,9 @@ int	ft_printf(const char *param_name, ...)
 	va_end(ap);
 	return (len);
 }
+// #include <stdio.h>
 // int main()
 // {
-// 	//printf("%d", printf("NULL %s", (char *)NULL));
+// 	printf("%d", printf("NULL %s", (char *)NULL));
 // 	printf("%d\n",ft_printf("NULL %s", (char *)NULL));
 // }
