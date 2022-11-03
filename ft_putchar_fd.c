@@ -6,13 +6,14 @@
 /*   By: asadik <asadik@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 21:42:46 by asadik            #+#    #+#             */
-/*   Updated: 2022/10/31 13:37:34 by asadik           ###   ########.fr       */
+/*   Updated: 2022/11/03 14:50:47 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd, int *len)
 {
 	write(fd, &c, 1);
+	(*len)++;
 }

@@ -6,16 +6,25 @@
 /*   By: asadik <asadik@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:28:25 by asadik            #+#    #+#             */
-/*   Updated: 2022/10/31 13:37:48 by asadik           ###   ########.fr       */
+/*   Updated: 2022/11/03 18:57:26 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd, int *len)
 {
-	if (s == 0)
-		return ;
+	if (!s)
+		ft_putstr_fd("(null)", FD, len);
 	while (*s)
-		write (fd, s++, 1);
+		(*len) += write (fd, s++, 1);
 }
+
+// #include <stdio.h>
+// int main()
+// {
+// int len = 0;
+
+// 	ft_putstr_fd("OOGA BOOGA", FD,&len);
+// 	printf("%d", len);
+// }

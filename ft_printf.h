@@ -6,7 +6,7 @@
 /*   By: asadik <asadik@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 16:22:54 by asadik            #+#    #+#             */
-/*   Updated: 2022/11/01 13:32:05 by asadik           ###   ########.fr       */
+/*   Updated: 2022/11/03 18:49:40 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@
 # include <stdarg.h>
 # include <unistd.h>
 
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_putnbr_fd_unsigned(unsigned int n, int fd);
-void	ft_putnbr_fd_hex(int n, char x, int fd);
+int		ft_printf(const char *param_name, ...);
+void	ft_putchar_fd(char c, int fd, int *len);
+void	ft_putstr_fd(char *s, int fd, int *len);
+void	ft_putnbr_fd(int n, int fd, int *len);
+void	ft_putnbr_fd_unsigned(unsigned int n, int fd, int *len);
+void	ft_putnbr_fd_hex(unsigned int n, char x, int *len);
+void	ft_putaddr_fd(void *n, int *len);
 
 #endif
